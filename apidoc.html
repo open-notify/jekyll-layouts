@@ -4,9 +4,9 @@ layout: base
 <div id="header">
  <div class="container">
   <h1><a href="/">Open Notify</a></h1>
-  <ul id="navigation" class="nav nav-tabs">
+   <ul id="navigation" class="nav nav-tabs">
     {% for link in site.navigation %}
-      <li {% if page.url == '/Open-Notify-API' %}class="active"{% endif %}>
+      <li {% if link.name == 'apidoc' %}class="active"{% endif %}>
         <a href="{{ link.url }}">{{ link.text }}</a>
       </li>
     {% endfor %} 
@@ -19,7 +19,7 @@ layout: base
    <div class="span2">
     <ul>
      {% for link in site.apis %}
-       <li {% if page.url == link.url %}class="active"{% endif %}>
+       <li {% if page.name == link.name %}class="active"{% endif %}>
          <a href="{{ link.url }}">{{ link.text }}</a>
        </li>
      {% endfor %}
