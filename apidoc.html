@@ -17,13 +17,17 @@ layout: base
  <div class="container">
   <div class="row">
    <div class="span2">
-    <ul>
-     {% for link in site.apis %}
-       <li {% if page.name == link.name %}class="active"{% endif %}>
-         <a href="{{ link.url }}">{{ link.text }}</a>
-       </li>
-     {% endfor %}
+    <div class="well navwell">
+      <ul class="nav nav-list">
+      <li class="nav-header">API Docs</li>
+      {% for link in site.apis %}
+        <li {% if page.name == link.name %}class="active"{% endif %}>
+          <a href="{{ link.url }}">{{ link.text }}</a>
+        </li>
+      {% endfor %}
     </ul>
+
+    </div>
    </div>
    <div class="span8">
     {{ content }}
