@@ -1,0 +1,38 @@
+---
+layout: base
+---
+<div id="header">
+ <div class="container">
+  <h1><a href="/">Open Notify</a></h1>
+  <ul id="navigation" class="nav nav-tabs">
+    {% for link in site.navigation %}
+      <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+    {% endfor %} 
+  </ul>
+ </div>
+</div>
+<div id="content">
+ <div class="container">
+  <div class="row">
+   <div class="span3">
+    <div class="well navwell">
+      <ul class="nav nav-list">
+      <li class="nav-header">ISS Notify Hardware Docs</li>
+      {% for link in site.hardlinks %}
+        <li {% if page.name == link.name %}class="active"{% endif %}>
+          <a href="{{ link.url }}">{{ link.text }}</a>
+        </li>
+      {% endfor %}
+      <li class="nav-header">ISS Notify Docs</li>
+      <li><a href="/ISS-Notify-Client/">ISS Notify Client Docs</a></li>
+      <li><a href="/ISS-Notify-Firmware/">ISS Notify Firmware Docs</a></li>
+    </ul>
+
+    </div>
+   </div>
+   <div class="span8">
+    {{ content }}
+   </div>
+  </div>
+ </div>
+</div>
